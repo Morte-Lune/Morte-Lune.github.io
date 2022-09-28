@@ -1,0 +1,166 @@
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ohmyfood</title>
+    <!-- Lien Favicon-->
+    <link rel="icon" href="./o.ico">
+    <!--Fichier Normalize-->
+    <link rel="stylesheet" href="./public/css/normalize.css">
+    <!--Lien FontAwesome-->
+    <script src="https://kit.fontawesome.com/7469708243.js" crossorigin="anonymous"></script>
+    <!--Lien mini reaset-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css">
+    <!--Fichier CSS-->
+    <link rel="stylesheet" href="./public/css/style.css">
+</head>
+<body class="accueil">
+    <!--LOADER / SPINNERr-->
+    <div class="loader">
+        <div class="loader__cercle">
+            <div class="loader__centre">
+                <i class="fa-solid fa-utensils"></i>
+            </div>
+        </div>
+    </div>
+<!--HEADER-->
+<header class="header-accueil">
+    <img src="./images/logo/ohmyfood.png" alt=" Logo ohmyfood">
+</header>
+<!--MAIN-->
+<main>
+    <!--SECTION-->
+    <section class="section-articleAside">
+        <!--ARTICLE 1-->
+        <article class="article-principal">
+                        <!--Formulaire-->
+                        <form method="post" action="traitement.php" class="formulaire">
+                            <p>
+                               <i class="fa-solid fa-location-dot"></i>
+                               <input type="text" name="recherche" id="recherche" placeholder= "Paris, Belleville"/>
+                            </p>
+                        </form>
+            <h1 class="article-principal__titre">Réservez le menu qui vous convient</h1>
+            <div class="article-principal__baseline">Découvrez des restaurants d'exception, sélectionnés par nos soins.</div>
+            <input type="button" value="Explorer nos restaurants" class="article-principal__bouton">
+        </article>
+        <!--ASIDE-->
+        <aside class="aside-fonctionnement">
+            <h2 class="aside-fonctionnement__titre">Fonctionnement</h2>
+            <div class="contenaire-etiquettesPrincipal">
+                <div class="contenaire-etiquette">
+                    <div class="etiquette">
+                        <div class="etiquette__numero">1</div>
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                        <h3>Choisissez un restaurant</h3>
+                    </div>
+                </div>
+                <div class="contenaire-etiquette">
+                    <div class="etiquette">
+                        <div class="etiquette__numero">2</div>
+                        <i class="fa-solid fa-list-ul"></i>
+                        <h3>Composez votre menu</h3>
+                    </div>
+                </div>
+                <div class="contenaire-etiquette">
+                    <div class="etiquette">
+                        <div class="etiquette__numero">3</div>
+                        <i class="fa-solid fa-store"></i>
+                        <h3>Dégustez au restaurant</h3>
+                    </div>
+                </div>
+            </div>    
+        </aside>
+    </section>
+        <!--ARTICLE restaurants, cards-->
+        <article class="article-restaurants">
+            <div class="contenairePrincipal"><!--contenaire principal-->
+                <h2 class="contenairePrincipal__titre">Restaurants</h2>
+                 <!--card 1-->
+            <a href="./html/menu1.html">
+                <div class="card">
+                    <div class="card__img"><img src="./images/restaurants/LaPaletteDuGout.jpg" alt="assiette remplie">
+                        <div class="nouveau">Nouveau</div>
+                    </div>
+                <div class="titre-coeur">
+                    <h3 class="titre-coeur__titre">La palette du goût</h3> 
+                    <div class="coeur-bouton">
+                        <i class="fa-regular fa-heart coeur-bouton__contour"></i>
+                        <i class="fa-solid fa-heart coeur-bouton__rempli"></i>
+                    </div>
+                </div>
+                    <div class="card__lieu">Ménilmontant</div>
+                </div>
+            </a>
+                <!--card 2-->
+            <a href="./html/menu2.html">
+                <div class="card">
+                    <div class="card__img"><img src="./images/restaurants/LaNoteEnchantée.jpg" alt="assiette remplie" class="vertical">
+                        <div class="nouveau">Nouveau</div>
+                    </div>
+                <div class="titre-coeur">
+                        <h3 class="titre-coeur__titre">La note enchantée</h3> 
+                        <div class="coeur-bouton">
+                            <i class="fa-regular fa-heart coeur-bouton__contour"></i>
+                            <i class="fa-solid fa-heart coeur-bouton__rempli"></i>
+                        </div>
+                </div>
+                    <div class="card__lieu">Charonne</div>
+                </div>
+            </a>    
+                <!--card 3-->
+            <a href="./html/menu3.html">    
+                <div class="card">
+                    <div class="card__img"><img src="./images/restaurants/ALaFrancaise.jpg" alt="assiette remplie"></div>
+                    <div class="titre-coeur">
+                        <h3 class="titre-coeur__titre">À la française</h3> 
+                        <div class="coeur-bouton">
+                            <i class="fa-regular fa-heart coeur-bouton__contour"></i>
+                            <i class="fa-solid fa-heart coeur-bouton__rempli"></i>
+                        </div>
+                    </div>
+                    <div class="card__lieu">Cité Rouge</div>
+                </div>
+            </a>   
+                <!--card 4-->
+            <a href="./html/menu4.html">
+                <div class="card">
+                    <div class="card__img">
+                        <img src="./images/restaurants/LedéliceDesSens.jpg" alt="assiette remplie">
+                    </div>
+                    <div class="titre-coeur">
+                        <h3 class="titre-coeur__titre">Le délice des sens</h3> 
+                        <div class="coeur-bouton">
+                            <i class="fa-regular fa-heart coeur-bouton__contour"></i>
+                            <i class="fa-solid fa-heart coeur-bouton__rempli"></i>
+                        </div>
+                    </div>
+                    <div class="card__lieu">Folie-Méricourt</div>
+                </div>
+            </a>
+            </div> <!--Div fermante contenaire principal!-->
+        </article>
+</main>
+<footer class="basdepage">
+    <h4 class="basdepage__titre">ohmyfood</h4>
+    <div class="basdepage-liste">
+        <div class="basdepage-liste__proposer">
+            <i class="fa-solid fa-utensils"></i>
+            <a href="#">Proposez un restaurant</a>
+        </div>
+        <div class="basdepage-liste__devenir">
+            <i class="fa-solid fa-handshake-angle"></i>
+            <a href="#">Devenir partenaire</a>
+        </div>
+        <div class="basdepage-liste__mentions">
+            <a href="#">Mentions légales</a>
+        </div>
+        <div class="basdepage-liste__contact">
+            <a href="mailto:hello@exemple.com">Contacts</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

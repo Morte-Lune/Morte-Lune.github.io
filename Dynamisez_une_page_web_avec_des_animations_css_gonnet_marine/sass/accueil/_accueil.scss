@@ -1,0 +1,620 @@
+/* URL POLICES */
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+
+
+
+/* VATIABLES */ 
+
+/* polices */
+$logoTitre: Shrikhand, arial, comic;
+$texte: Roboto, arial, comic;
+
+/* Couleurs */
+$Primaire: #9356DC;
+$Secondaire: #FF79DA;
+$Tertiaire: #99E2D0;
+/* Couleurs pipette */
+$couleur1: #eaeaea;
+$couleur2: #f6f6f6;
+$couleur3: #353535;
+
+/* MAPS */
+
+/* Taille police */
+$font-size: ( h1h2: 25px, h3BaselineForm: 19px, etiquetteBouton: 18px, footerNouveau: 16px);
+
+/* MIXINS */
+
+/* mixin pour les étiquettes */
+@mixin etiquettes {
+    font-weight: bold;
+    font-size: map-get($font-size ,etiquetteBouton);
+    background-color: lighten($couleur3, 75%);
+    @include ombres;
+    display: flex;
+    align-items: center;
+    width: 350px;
+    height: 70px;
+    border-radius: 20px;
+    i {
+        color: lighten($couleur3, 30%);
+        padding-right: 10px;
+    }
+}
+
+/* mixin pour les étiquettes tablette */
+@mixin tablEtiquette {
+    font-size: 16px;
+    background-color: lighten($couleur3, 75%);
+    @include ombres;
+    display: flex;
+    align-items: center;
+    width: 240px;
+    height: 50px;
+    border-radius: 30px;
+    i {
+        color: lighten($couleur3, 30%);
+        padding-right: 10px;
+        padding-left: 5px;
+    }
+}
+
+/* mixin pour les étiquettes desktop */
+@mixin desktop {
+    font-size: 16px;
+    background-color: lighten($couleur3, 75%);
+    @include ombres;
+    display: flex;
+    align-items: center;
+    width: 255px;
+    height: 60px;
+    border-radius: 30px;
+    i {
+        color: lighten($couleur3, 30%);
+        padding-right: 10px;
+        padding-left: 5px;
+    }
+}
+
+@mixin numeros {
+    position: relative;
+    right: 10px;
+    border-radius: 100px;
+    background-color: #9356DC;
+    color: white;
+    font-size: 15px;
+    width: 27px;
+    height: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* mixin Box Shadow */
+@mixin ombres {
+    box-shadow: lighten($couleur3, 65%) 0px 4px 8px;
+}
+
+@mixin ombresFoncé {
+    box-shadow: lighten($couleur3, 20%) 0px 4px 8px;
+}
+
+/* mixin Bouton */
+@mixin bouton {
+    background: linear-gradient(170deg, rgba(255,121,218,1) 0%, rgba(203,104,219,1) 38%, rgba(147,86,220,1) 100%);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    height: 56px;
+    width: 220px;
+    font-size: 17px;
+}
+
+/* mixin Bouton survol */
+@mixin boutonSurvol {
+    background: linear-gradient(170deg, rgb(255, 180, 234) 0%, rgba(200,141,217,1) 38%, rgba(172,127,226,1) 100%);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    height: 56px;
+    width: 220px;
+    font-size: 17px;
+}
+
+/*             (\_/)
+               ( •,•)
+               (")_(")        !*/           
+
+
+/* BODY */ 
+body.accueil {
+    font-family: $texte;
+    @media only screen and (min-width: 992px) {
+        background-color: white;
+    }
+}
+
+/* LOADER SPINNER */
+.loader {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.829);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: apparition 0s 2s linear ;
+    animation-fill-mode: both;
+      &__cercle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 15px solid $Primaire;
+        border-color: $Secondaire transparent $Tertiaire transparent;
+        animation: spinner 1.2s linear infinite;
+      }
+      &__centre {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i {
+            color: $Primaire;
+            font-size: 40px;
+        }
+      }
+    }
+/* KEYFRAMES */
+  @keyframes spinner {
+    0% {
+      transform: rotate(0turn);
+    }
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+
+  @keyframes apparition {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        z-index: -10;
+    }
+  }
+
+/* HEADER */
+header.header-accueil {
+    text-align: center;
+    @media only screen and (min-width: 992px) {
+        background-color: lighten($couleur3, 70%)
+    }
+    img {
+        height: 35px;
+        width: auto;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        @media only screen and (min-width: 992px) {
+            margin-bottom: 80px;
+        }
+    }
+}
+
+/* MAIN */
+/* section */
+section.section-articleAside {
+@media only screen and (min-width: 992px) {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+}
+   /* Formulaire */
+   form.formulaire {
+    background-color: $couleur1;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+    box-shadow: inset 0px 4px 10px -9px;
+    @media only screen and (min-width: 992px) {
+        width: 300px;
+        border-radius: 25px 25px;
+        margin-top: 40px;
+    }
+    input {
+        background-color: $couleur1;
+        padding-left: 20px;
+        border: 0px;
+        margin: auto;
+    }
+    i {
+        color: $couleur3;
+        margin-left: 20px;
+    }
+    ::placeholder {
+        font-weight: bold;
+        font-size: map-get($font-size, h3BaselineForm);
+        color: lighten($couleur3, 10%);
+    }
+
+}
+    /* article 1 */ 
+    .article-principal {
+    background-color: lighten($couleur3, 75%);
+    text-align: center;
+    @media only screen and (min-width: 992px) {
+        box-shadow: $Secondaire 0px 0px 20px 4px;
+        border-radius: 60px;
+        width: 400px;
+        margin: 0px;
+        margin-right: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__titre {
+        font-weight: bold;
+        width: 260px;
+        margin: auto;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        font-size: map-get($font-size,h1h2);
+        @media only screen and (min-width: 768px) {
+            width: 100%;
+            font-size: 28px;
+        }
+        @media only screen and (min-width: 992px) {
+            color: darken($Primaire,25%);
+            font-family: $logoTitre;
+            font-size: 40px;
+            margin-top: 60px;
+            margin-left: 10px;
+            margin-bottom: 0px;
+            text-align: left;
+        }
+    }
+    &__baseline {
+        margin: auto;
+        margin-bottom: 30px;
+        font-size: map-get($font-size, h3BaselineForm);
+        width: 350px;
+        @media only screen and (min-width: 992px) {
+            color: darken($Primaire,25%);
+            font-size: 22px;
+            line-height: 30px;
+            width: 100%;
+            margin-top: 15px;
+            margin-left: 5px;
+        }
+    }
+    &__bouton {
+        @include bouton;
+        @include ombres;
+        margin-bottom: 50px;
+        &:hover{
+            cursor: pointer;
+            @include boutonSurvol;
+            @include ombresFoncé;
+        }
+    }
+}
+
+/* ASIDE */
+.aside-fonctionnement {
+    width: max-content;
+    margin: auto;
+    @media only screen and (min-width: 768px) {
+        width: 100%;
+        background-color: lighten($Tertiaire, 10%);
+    }
+    @media only screen and (min-width: 992px) {
+        background-color: white;
+    }
+    &__titre {
+        font-size: map-get($font-size, h1h2);
+        font-weight: bold;
+        margin-top: 40px;
+        margin-bottom: 30px;
+        width: 100%;
+        @media only screen and (min-width: 768px) {
+            text-align: center;
+            margin-top: 0px;
+            padding-top: 15px;
+        }
+        @media only screen and (min-width: 992px) {
+            margin-top: 40px;;
+            margin-bottom: 40px;;
+        }
+    }
+    @media only screen and (min-width: 992px) {
+        border-radius: 60px 60px;
+        box-shadow: $Primaire 0px 0px 20px 4px;
+        width: max-content;
+        display: flex;
+        flex-direction: column;
+        margin: 0px;
+    }
+}
+
+.contenaire-etiquettesPrincipal {
+    @media only screen and (min-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+        background-color: lighten($Tertiaire, 10%);
+        padding-bottom: 15px;
+    }
+    @media only screen and (min-width: 992px) {
+        flex-direction: column;
+        row-gap: 20px;
+        background-color: white;
+        width: 300px;
+        border-radius: 50px 50px;
+    }
+}
+
+.contenaire-etiquette {
+width: max-content;
+margin: auto;
+margin-bottom: 25px;
+}
+
+.etiquette {
+    @include etiquettes;
+    @media only screen and (min-width: 768px) {
+        @include tablEtiquette;
+    }
+    @media only screen and (min-width: 992px) {
+        @include desktop;
+    }
+
+    &__numero {
+    @include numeros;
+    @media only screen and (min-width: 768px) {
+        display: none;
+    }
+    @media only screen and (min-width: 992px) {
+        display: initial;
+        @include numeros;
+    }
+    }
+    i {
+        margin-right: 10px;
+        margin-left: 10px;
+        @media only screen and (min-width: 768px) {
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+    }
+    &:hover {
+        background-color: lighten($Primaire, 35%);
+        cursor: pointer;
+        i {
+            color: $Primaire;
+        } 
+    }
+    h3 {
+        font-weight: bold;
+    }
+}
+
+/* article, restaurants, cards */
+.article-restaurants {
+    background-color: lighten($couleur3, 75%);
+    @media only screen and (min-width: 992px) {
+        margin-top: 50px;
+    }
+}
+
+.contenairePrincipal {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 50px;
+    width: max-content;
+    row-gap: 20px;
+    padding-bottom: 80px;
+    @media only screen and (min-width: 768px) {
+        flex-direction: row;
+        width: 700px;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        row-gap: 50px;
+    }
+    @media only screen and (min-width: 992px) {
+        width: 970px;
+        row-gap: 35px;
+    }
+    &__titre {
+        font-size: map-get($font-size, h1h2);
+        font-weight: bold;
+        margin-top: 40px;
+        width: 100%;
+        @media only screen and (min-width: 768px) {
+            width: 650px;
+        }
+        @media only screen and (min-width: 992px) {
+            width: 100%;
+            margin-left: 20px;
+            margin-bottom: 40px;
+        }
+    }
+}
+
+/* CARTES */
+.card {
+    @include ombres;
+    width: 350px;
+    border-radius: 20px 20px 20px 20px;
+    background-color: white;
+    @media only screen and (min-width: 768px) {
+        width: 300px;
+    }
+    @media only screen and (min-width: 992px) {
+        width: 450px;
+    }
+    &__img {
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px 16px 0px 0px;
+    @media only screen and (min-width: 768px) {
+        height: 150px;
+    }
+    @media only screen and (min-width: 992px) {
+        height: 200px;
+    }
+    }
+    img {
+    height: auto;
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -65%);    
+    }
+    img.vertical {
+        height: auto;
+        position: absolute; 
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -57%);  
+    }
+    .nouveau {
+        background-color: #99E2D0;
+        color: darken($Tertiaire, 38%);
+        font-weight: bold;
+        width: 80px;
+        height: 30px;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 253px;
+        top: 15px;
+        @media only screen and (min-width: 768px) {
+            left: 210px;
+            background-color: $Secondaire;
+            color: darken($Secondaire, 38%);
+        }
+        @media only screen and (min-width: 992px) {
+            left: 350px;
+        }
+    }
+    &__lieu {
+        padding-bottom: 10px;
+        font-size: map-get($font-size, h3BaselineForm);
+        margin-left: 15px;
+        line-height: 30px;
+    }
+}
+/* Positionnement titre et coeur en display */
+.titre-coeur {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    &__titre {
+        font-weight: bold;
+        font-size: map-get($font-size, h3BaselineForm);
+        margin-left: 15px;
+    }
+}
+/* Bouton coeur */ 
+.coeur-bouton {
+    display: flex;
+    width: max-content;
+    &__rempli {
+        font-size: 26px;
+        background: linear-gradient(170deg, rgb(255, 180, 234) 0%, rgba(200,141,217,1) 38%, rgba(172,127,226,1) 100%);
+        /*webkit permet d'appliquer le gradient sur l'îcone qui est du texte */
+        -webkit-background-clip: border-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        opacity: 0;
+        transition: 1s;
+        position: relative;
+        right: 25px;
+        z-index: 0;
+    }
+    &__contour {
+        font-size: 26px;
+        transition: 0.5s;
+        z-index: 1;
+        &:hover + .coeur-bouton__rempli {
+            opacity: 1;
+        }
+        &:hover {
+            cursor: pointer;
+            opacity: 0;
+        }
+    }
+}
+
+/* CARTE CLIQUABLE */
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    @media only screen and (min-width: 768px) {
+        color: $Primaire;
+    }
+}
+
+/* FOOTER */
+.basdepage {
+    background-color: #353535;
+    color: white;
+    padding-bottom: 30px;
+    &__titre {
+        font-family: $logoTitre;
+        font-size: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: 350px;
+        margin: auto;
+        @media only screen and (min-width: 768px) {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.basdepage-liste {
+    font-size: map-get($font-size, footerNouveau);
+    width: 350px;
+    margin: auto;
+    line-height: 30px;
+    i {
+        font-size: 15px;
+        margin-right: 8px;
+    }
+    a {
+        text-decoration: none;
+        color: white;
+    }
+   a:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    @media only screen and (min-width: 768px) {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        a:hover {
+            color: #FF79DA;
+        }
+    }
+
+}
